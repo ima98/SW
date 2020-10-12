@@ -9,6 +9,7 @@
     <div>
 
       <h2>Quiz: el juego de las preguntas</h2>
+	   <a href='../php/QuestionForm.php'>Question </a>
       
     </div>
   </section>
