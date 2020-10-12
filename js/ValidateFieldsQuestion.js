@@ -22,22 +22,23 @@ function mainM(){
      }else{
        return true;
      }
-     return true;
    
-   });
- });
- }
+   }
 
 
 function validarCampoVacio(){
+	var k=true;
   $("form :input").each(function(){
         var emp = $(this).val();
+		
         if(emp.length==0){
-            alert("El campo "+ "\' "+ emp.attr("name")+"\'"+" esta vacio.");
-            return false;
+            //alert("El campo "+ "\' "+ emp.attr("name")+"\'"+" esta vacio.");
+			//alert("Falta campo");
+			console.log($(this).val());
+            k= false;
         }
-        return true;
-    });
+    })
+	return k;
 }
 
  function validarPregunta(preg){
