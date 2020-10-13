@@ -1,29 +1,17 @@
-/*$(document).ready(function(){
+
+$(document).ready(function(){
   $("#submit").click(function(){
 
     return ( validarCampoVacio() && validarPregunta($('#pregunta').val()) && validarCorreo($('#correo').val()) ) ;
   });
 });
-*/
-
+/*
 function mainM(){
-
-     if(!validarCampoVacio()){
-       alert("Hay algun campo vacio");
-       return false;
-
-     }else if(!validarCorreo($('#correo').val())){
-        alert("El correo electronico introducido no es valido.");
-      return false;
-
-     }else if(! validarPregunta($('#pregunta').val())){
-        alert("La pregunta tiene que contener al menos 10 caracteres");
-       return false;
-     }else{
-       return true;
-     }
+     return (validarCampoVacio() && validarCorreo($('#correo').val()) && validarPregunta($('#pregunta').val()))
    
    }
+
+*/
 
 
 function validarCampoVacio(){
@@ -32,9 +20,7 @@ function validarCampoVacio(){
         var emp = $(this).val();
 		
         if(emp.length==0){
-            //alert("El campo "+ "\' "+ emp.attr("name")+"\'"+" esta vacio.");
-			//alert("Falta campo");
-			console.log($(this).val());
+            alert("El campo "+ "\' "+ $(this).attr('name')+"\'"+" esta vacio.");
             k= false;
         }
     })

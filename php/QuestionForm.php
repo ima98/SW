@@ -11,17 +11,12 @@
   <section class="main" id="s1">
     <div>
 
-	<form id='fquestion' name='fquestion' action='AddQuestion.php' onsubmit="return mainM()">
+	<form id='fquestion' name='fquestion' action='AddQuestion.php' >
+		<!-- onsubmit="return mainM()" -->
 		<br><br>
 			 <label for="correo">Dirección de correo:</label>
-		  <input type="text" id="correo" name="correo" placeholder=""><br><br>
-
-		  <input type="radio" id="alumno" name="trabajo" value="alumno">
-		  <label for="alumno">AlumnX</label>
-		  <input type="radio" id="profesor" name="trabajo" value="profesor">
-		  <label for="profesor">Profesor</label><br><br>
-		  
-		  
+		  <input type="text" id="correo" name="correo" placeholder="name@ikasle.ehu.eus"><br><br>
+  
 		  <label for="tema">Tema :</label>
 		  <input type="text" id="tema" name="tema" placeholder=" Tema de la pregunta"><br><br>
 
@@ -29,16 +24,16 @@
 		  <input type="text" id="pregunta" name="pregunta" placeholder="             ¿ ... ?"><br><br>
 
 		  <label for="correcta">1ª Opcion:</label>
-		  <input type="text" id="correcta" name="correcta" placeholder=" Respuesta Correcta"><br>
+		  <input type="text" id="correcta" name="primera opcion" placeholder=" Respuesta Correcta"><br>
 
 		  <label for="incorrecta1">2ª Opcion:</label>
-		  <input type="text" id="incorrecta1" name="incorrecta1" placeholder=" Respuesta Incorrecta"><br>
+		  <input type="text" id="incorrecta1" name="segunda opcion" placeholder=" Respuesta Incorrecta"><br>
 
 		  <label for="incorrecta2">3ª Opcion:</label>
-		  <input type="text" id="incorrecta2" name="incorrecta2" placeholder=" Respuesta Incorrecta"><br>
+		  <input type="text" id="incorrecta2" name="tercera opcion" placeholder=" Respuesta Incorrecta"><br>
 
 		  <label for="incorrecta3">4ª Opcion:</label>
-		  <input type="text" id="incorrecta3" name="incorrecta3" placeholder=" Respuesta Incorrecta"><br><br>
+		  <input type="text" id="incorrecta3" name="cuarta opcion" placeholder=" Respuesta Incorrecta"><br><br>
 		  
 		  <label for="dificultad">Dificultad de la pregunta</label>
 		<select name="dificultad" id="dificultad">
