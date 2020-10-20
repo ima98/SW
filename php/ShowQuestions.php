@@ -2,6 +2,7 @@
 <html>
 <head>
 	<?php include '../html/Head.html'?>
+	
 </head>
 <body>
 	<?php include '../php/Menus.php' ?>
@@ -16,7 +17,9 @@
 
 			//if($query) {
 				echo"
-				<table><tr>
+				<table style='border: 1px solid black;
+  border-collapse: collapse; font-family: arial, sans-serif;
+  width: 100%;'><tr>
 				<th>Correo</th> 
 				<th>Tema</th>
 				<th>Pregunta</th>
