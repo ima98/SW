@@ -12,8 +12,8 @@
             <?php
             $link = mysqli_connect("localhost", "root", "", "quiz");
             $sql="INSERT INTO preguntas(correo, tema, pregunta, correcta, incorrecta1, incorrecta2, incorrecta3, dificultad) VALUES
-            ('$_GET[correo]','$_GET[tema]', '$_GET[pregunta]', '$_GET[correcta]' ,'$_GET[incorrecta1]' ,'$_GET[incorrecta2]', 
-            '$_GET[incorrecta3]', '$_GET[dificultad]')";
+            ('$_POST[correo]','$_POST[tema]', '$_POST[pregunta]', '$_POST[correcta]' ,'$_POST[incorrecta1]' ,'$_POST[incorrecta2]', 
+            '$_POST[incorrecta3]', '$_POST[dificultad]')";
             if (!mysqli_query($link ,$sql))
             {
                 die('Error: ' . mysqli_error($link));

@@ -11,7 +11,7 @@
   <section class="main" id="s1">
     <div>
 
-	<form id='fquestion' name='fquestion' action='AddQuestion.php' >
+	<form method='POST' id='fquestion' name='fquestion' action='AddQuestion.php' >
 		<!-- onsubmit="return mainM()" -->
 		<br><br>
 			 <label for="correo">Dirección de correo:</label>
