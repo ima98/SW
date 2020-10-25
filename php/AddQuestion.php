@@ -20,7 +20,7 @@
 
             if (!mysqli_query($link ,$sql))
             {
-                die('Error: ' . mysqli_error($link));
+                die("");
                 echo"La pregunta no se ha podido añadir correctamente, intentalo mas tarde :(";
  
             }else{
