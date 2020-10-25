@@ -5,6 +5,14 @@ $(document).ready(function(){
     return ( validarCampoVacio() && validarPregunta($('#pregunta').val()) && validarCorreo($('#correo').val()) ) ;
   });
 });
+/*
+function mainM(){
+     return (validarCampoVacio() && validarCorreo($('#correo').val()) && validarPregunta($('#pregunta').val()))
+   
+   }
+
+*/
+
 
 function validarCampoVacio(){
 	var k=true;
@@ -19,15 +27,16 @@ function validarCampoVacio(){
 	return k;
 }
 
-function validarPregunta(preg){
+ function validarPregunta(preg){
   if(preg.length <10){
      alert("La pregunta tiene que contener al menos 10 caracteres");
     return false;
   }
-  return true;
-}
+return true;
+ }
 
-function validarCorreo(email){
+
+ function validarCorreo(email){
     var exprAlu = /^[a-zA-Z]+(([0-9]{3})+@ikasle\.ehu\.(eus|es))$/;
     var exprPro = /^[a-zA-Z]+(\.[a-zA-Z]+@ehu\.(eus|es)|@ehu\.(eus|es))$/;
 
@@ -35,6 +44,6 @@ function validarCorreo(email){
         return true;
     }
 
-  alert("El correo electronico introducido no es valido.");
-  return false;
+    alert("El correo electronico introducido no es valido.");
+    return false;
 }

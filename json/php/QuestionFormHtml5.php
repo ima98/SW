@@ -2,8 +2,6 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<script src="../js/jquery-3.4.1.min.js"></script>
-	<script src="../js/ShowImageInForm.js"></script>
   <?php include '../html/Head.html'?>
 </head>
 <body>
@@ -11,7 +9,7 @@
   <section class="main" id="s1">
     <div>
 
-       <form method='POST' id='fquestion' name='fquestion' action='AddQuestionWithImage.php' enctype="multipart/form-data" >
+     <form id='fquestion' name='fquestion' action='AddQuestion.php'>
 		<br><br>
 			 <label for="correo">Dirección de correo:</label>
 		  <input type="email" id="correo" name="correo" placeholder="name@ikasle.ehu.eus" required pattern="^([a-zA-Z]+(([0-9]{3})+@ikasle\.ehu\.(eus|es))|[a-zA-Z]+(\.[a-zA-Z]+@ehu\.(eus|es)|@ehu\.(eus|es)))$"><br><br>
@@ -20,7 +18,7 @@
 		  <input type="text" id="tema" name="tema" placeholder=" Tema de la pregunta" required><br><br>
 
 		  <label for="pregunta">Enunciado de la pregunta :</label>
-		  <input type="text" id="pregunta" name="pregunta" placeholder="             ¿ ... ?" required minlength="10" maxlength="20" ><br><br>
+		  <input type="text" id="pregunta" name="pregunta" placeholder="             ¿ ... ?" minlength="10" maxlength="20" required><br><br>
 
 		  <label for="correcta">1ª Opcion:</label>
 		  <input type="text" id="correcta" name="correcta" placeholder=" Respuesta Correcta" required><br>
@@ -42,9 +40,9 @@
 		</select>
 		<br><br>
 
-		<input type='file' id="imgInp" name ="imgInp" /><br> <img id="blah" src=" " style="width: 100px; height: 100px;" alt="Your Image" /><br>
-
 		<input type="submit" value= "Enviar pregunta" id="submit" name="enviar"><br>
+
+	</form>
 
     </div>
   </section>

@@ -7,8 +7,37 @@
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
     <div>
-      Código PHP para mostrar una tabla con las preguntas de la BD.<br>
-      La tabla incluye las imágenes de la BD.
+    	<?php
+			 include 'DbConfig.php';
+			$link = mysqli_connect($server,$user,$pass,$basededatos);
+
+			$query = mysqli_query($link, "SELECT * FROM preguntas" );
+
+				echo"
+				<table style='border: 1px solid black;
+  border-collapse: collapse; font-family: arial, sans-serif;
+  width: 100%;'><tr>
+				<th>Correo</th> 
+				<th>Pregunta</th>
+				<th>Respuesta</th>
+				<th>Imagen</th>
+				</tr>
+				";
+
+				while ($row = mysqli_fetch_array($query)) {
+					echo "<tr>
+					<td>" . $row[1]. "</td>
+					<td> " . $row[3]. "</td>
+					<td>" . $row[4]. "</td>
+					<td> <img height='100px'  src='data:image/;base64," . base64_encode($row[9]) . "'/></td>
+					</tr>";
+					
+				}
+
+				echo '</table>';
+				$query->close();
+				mysqli_close($link);
+			?>
     </div>
   </section>
   <?php include '../html/Footer.html' ?>

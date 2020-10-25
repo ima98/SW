@@ -11,7 +11,7 @@
   <section class="main" id="s1">
     <div>
 
-       <form method='POST' id='fquestion' name='fquestion' action='AddQuestionWithImage.php' enctype="multipart/form-data" >
+       <form id='fquestion' name='fquestion' action='AddQuestion.php'>
 		<br><br>
 			 <label for="correo">Dirección de correo:</label>
 		  <input type="email" id="correo" name="correo" placeholder="name@ikasle.ehu.eus" required pattern="^([a-zA-Z]+(([0-9]{3})+@ikasle\.ehu\.(eus|es))|[a-zA-Z]+(\.[a-zA-Z]+@ehu\.(eus|es)|@ehu\.(eus|es)))$"><br><br>
@@ -42,7 +42,7 @@
 		</select>
 		<br><br>
 
-		<input type='file' id="imgInp" name ="imgInp" /><br> <img id="blah" src=" " style="width: 100px; height: 100px;" alt="Your Image" /><br>
+		<input type='file' id="imgInp" /><br> <img id="blah" src=" " style="width: 100px; height: 100px;" alt="Your Image" /><br>
 
 		<input type="submit" value= "Enviar pregunta" id="submit" name="enviar"><br>
 
