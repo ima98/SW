@@ -42,7 +42,7 @@
 		</select>
 		<br><br>
 
-		<input type='file' id="imgInp" name ="imgInp" /><br> <img id="blah" src=" " style="width: 100px; height: 100px;" alt="Your Image" /><br>
+		<input type='file' id="imgInp" name ="imgInp" /><br> <img id="blah" src="../images/perro.jpg" style="width: 100px; height: 100px;" alt="Your Image" /><br>
 
 		<input type="submit" value= "Enviar pregunta" id="submit" name="enviar"><br>
 
