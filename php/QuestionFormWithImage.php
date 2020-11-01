@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<script src="../js/jquery-3.4.1.min.js"></script>
+	<!-- <script src="../js/jquery-3.4.1.min.js"></script> -->
 	<script src="../js/ShowImageInForm.js"></script>
   <?php include '../html/Head.html'?>
 </head>
@@ -14,13 +14,24 @@
        <form method='POST' id='fquestion' name='fquestion' action='AddQuestionWithImage.php' enctype="multipart/form-data" >
 		<br><br>
 			 <label for="correo">Dirección de correo:</label>
-		  <input type="email" id="correo" name="correo" placeholder="name@ikasle.ehu.eus" required pattern="^([a-zA-Z]+(([0-9]{3})+@ikasle\.ehu\.(eus|es))|[a-zA-Z]+(\.[a-zA-Z]+@ehu\.(eus|es)|@ehu\.(eus|es)))$"><br><br>
+		  <input type="email" id="correo" name="correo" placeholder="name@ikasle.ehu.eus" required pattern="^([a-zA-Z]+(([0-9]{3})+@ikasle\.ehu\.(eus|es))|[a-zA-Z]+(\.[a-zA-Z]+@ehu\.(eus|es)|@ehu\.(eus|es)))$" ><br><br>
+		
 
+
+
+
+		  <!-- required pattern="^([a-zA-Z]+(([0-9]{3})+@ikasle\.ehu\.(eus|es))|[a-zA-Z]+(\.[a-zA-Z]+@ehu\.(eus|es)|@ehu\.(eus|es)))$" 
+
+minlength="10" maxlength="20"
+required
+
+
+		  -->
 		  <label for="tema">Tema :</label>
-		  <input type="text" id="tema" name="tema" placeholder=" Tema de la pregunta" required><br><br>
+		  <input type="text" id="tema" name="tema" placeholder=" Tema de la pregunta" required ><br><br>
 
 		  <label for="pregunta">Enunciado de la pregunta :</label>
-		  <input type="text" id="pregunta" name="pregunta" placeholder="             ¿ ... ?" required minlength="10" maxlength="20" ><br><br>
+		  <input type="text" id="pregunta" name="pregunta" placeholder="             ¿ ... ?" required  minlength="10" maxlength="20"><br><br>
 
 		  <label for="correcta">1ª Opcion:</label>
 		  <input type="text" id="correcta" name="correcta" placeholder=" Respuesta Correcta" required><br>
@@ -29,13 +40,13 @@
 		  <input type="text" id="incorrecta1" name="incorrecta1" placeholder=" Respuesta Incorrecta" required><br>
 
 		  <label for="incorrecta2">3ª Opcion:</label>
-		  <input type="text" id="incorrecta2" name="incorrecta2" placeholder=" Respuesta Incorrecta" required><br>
+		  <input type="text" id="incorrecta2" name="incorrecta2" placeholder=" Respuesta Incorrecta"required ><br>
 
 		  <label for="incorrecta3">4ª Opcion:</label>
-		  <input type="text" id="incorrecta3" name="incorrecta3" placeholder=" Respuesta Incorrecta" required><br><br>
+		  <input type="text" id="incorrecta3" name="incorrecta3" placeholder=" Respuesta Incorrecta"required ><br><br>
 		  
 		  <label for="dificultad">Dificultad de la pregunta</label>
-		<select name="dificultad" id="dificultad" required>
+		<select name="dificultad" id="dificultad" >
 		  <option value="1">Baja</option>
 		  <option value="2">Media</option>
 		  <option value="3">Alta</option>
@@ -49,5 +60,15 @@
     </div>
   </section>
   <?php include '../html/Footer.html' ?>
+  <?php $(document).ready(function(){
+  $("#submit").click(function(){
+
+    return ( validarCampoVacio() && validarPregunta($('#pregunta').val()) && validarCorreo($('#correo').val()) ) ;
+  });
+});
+
+
+
+?>
 </body>
 </html>
