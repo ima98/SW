@@ -7,8 +7,7 @@
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
     <div>
-        <?php
-            
+        <?php            
             echo "<script>
                     alert('Hasta pronto wevon');
                     window.location.href='Layout.php';
