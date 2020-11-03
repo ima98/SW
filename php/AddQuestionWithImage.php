@@ -44,7 +44,7 @@
                 echo "PREGUNTA AÑADIDA :)";
             }
 
-            echo "<p> <a href='ShowQuestionsWithImage.php'> Ver preguntas </a>";
+            echo "<p> <a href='ShowQuestionsWithImage.php?email=" . $email . "'> Ver preguntas </a>";
             mysqli_close($link);
 
 

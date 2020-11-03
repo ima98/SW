@@ -1,20 +1,19 @@
 
-$(document).ready(function(){
-  $("#submit").click(function(){
-
-    return ( validarCampoVacio() && validarPregunta($('#pregunta').val()) && validarCorreo($('#correo').val()) ) ;
-  });
-});
-
 function validarCampoVacio(){
 	var k=true;
   $("form :input").each(function(){
         var emp = $(this).val();
-		
-        if(emp.length==0){
+
+        if($(this).attr('name')=='imgInp'){
+          k=true;
+        }else{
+          if(emp.length==0){
             alert("El campo "+ "\' "+ $(this).attr('name')+"\'"+" esta vacio.");
             k= false;
         }
+        }
+
+        
     })
 	return k;
 }
