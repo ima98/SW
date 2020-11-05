@@ -19,13 +19,13 @@
 			<?php echo "<form method='POST' id='fquestion' name='fquestion' action='AddQuestionWithImage.php?email=" . $email . "' enctype='multipart/form-data'>"; ?>
 			<br><br>
 			<label for="correo">Dirección de correo:</label>
-			<input type="email" id="correo" name="correo" placeholder="name@ikasle.ehu.eus" required pattern="^([a-zA-Z]+(([0-9]{3})+@ikasle\.ehu\.(eus|es))|[a-zA-Z]+(\.[a-zA-Z]+@ehu\.(eus|es)|@ehu\.(eus|es)))$"><br><br>
+			<input type="email" id="correo" name="correo" placeholder="name123@ikasle.ehu.eus" required pattern="^([a-zA-Z]+(([0-9]{3})+@ikasle\.ehu\.(eus|es))|[a-zA-Z]+(\.[a-zA-Z]+@ehu\.(eus|es)|@ehu\.(eus|es)))$"><br><br>
 
 			<label for="tema">Tema :</label>
 			<input type="text" id="tema" name="tema" placeholder=" Tema de la pregunta" required><br><br>
 
 			<label for="pregunta">Enunciado de la pregunta :</label>
-			<input type="text" id="pregunta" name="pregunta" placeholder="             ¿ ... ?" required minlength="10" maxlength="20"><br><br>
+			<input type="text" id="pregunta" name="pregunta" placeholder="             ¿ ... ?" required minlength="10" maxlength="100"><br><br>
 
 			<label for="correcta">1ª Opcion:</label>
 			<input type="text" id="correcta" name="correcta" placeholder=" Respuesta Correcta" required><br>

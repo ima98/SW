@@ -3,7 +3,6 @@
 if (isset($_GET['email']) && strval($_GET['email'])!="") {
   //echo "<script> ();</script>";
   $email = strval($_GET['email']);
-  
   echo "<script type='text/javascript'>
   function inicioSesion() {
 
@@ -14,7 +13,7 @@ if (isset($_GET['email']) && strval($_GET['email'])!="") {
     $('#login').hide();
 
     $('#h1').append('<p>$email </p>');
-    
+    $('#h1').append('<img width=\'50\' height=\'60\' src=\'data:image/*;base64,".getImagenDeBD($email)."\' alt=\'Imagen\'/>');
   }
   
 </script>";
@@ -64,7 +63,7 @@ echo "<script>window.onload = inicioSesion; </script>";
 
   <?php
 
-  function getImagenDeBD()
+  function getImagenDeBD($email)
   {
     //echo "getimagenDB funciona";
     include 'DbConfig.php';
@@ -81,8 +80,7 @@ echo "<script>window.onload = inicioSesion; </script>";
     //     die("Error: ".mysqli_error($mysqli));
     // }
     $img = mysqli_fetch_array($resul);
-    $imagen = base64_encode($img[4]);
-    return $imagen;
+    return $img['foto'];
   }
 
   ?>
