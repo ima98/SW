@@ -2,7 +2,9 @@
 <html>
 
 <head>
+	
 	<?php include '../html/Head.html' ?>
+
 </head>
 
 <body>
@@ -16,9 +18,8 @@
 			$query = mysqli_query($link, "SELECT * FROM preguntas");
 
 			echo "
-				<table style='border: 1px solid black;
-  border-collapse: collapse; font-family: arial, sans-serif;
-  width: 100%;'><tr>
+				<table style='border: 1px solid black; border-collapse: collapse; font-family: arial, sans-serif; width: 100%;'>
+				<tr>
 				<th>Correo</th> 
 				<th>Pregunta</th>
 				<th>Respuesta</th>

@@ -14,7 +14,6 @@
 	<?php include '../php/Menus.php' ?>
 	<section class="main" id="s1">
 		<div>
-
 			<form method='POST' id='fquestion' enctype="multipart/form-data" name='fquestion' action='<?php echo $_SERVER['PHP_SELF'] ?>'>
 				<br><br>
 				<input type="radio" id="alumno" name="rol" value="alumno" checked="checked">
@@ -23,7 +22,7 @@
 				<label for="Profesor">Profesor</label><br>
 
 				<label for="correo">Dirección de correo:</label>
-				<input type="text" id="correo" name="correo" placeholder="name@ikasle.ehu.eus"><br><br>
+				<input type="text" id="correo" name="correo" placeholder="name123@ikasle.ehu.eus" maxlength="70"><br><br>
 
 
 				<label for="nombre">Nombre y Apellidos:</label>
@@ -56,7 +55,6 @@ if (isset($_POST['enviar'])) {
 	$nombre = $_POST['nombre'];
 	$contraseña = $_POST['contraseña'];
 	$repcontraseña = $_POST['repcontraseña'];
-
 
 	if (comprobar($correo, 	$nombre, 	$contraseña, $repcontraseña)) {
 
@@ -117,7 +115,6 @@ function comprobar($correo, 	$nombre, 	$contraseña, $repcontraseña)
 		echo "Error, la contraseña deben ser 6 carácteres MINIMO. <br>";
 		return false;
 	}
-
 
 	return true;
 }

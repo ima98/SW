@@ -9,6 +9,7 @@ if (isset($_GET['email']) && strval($_GET['email'])!="") {
     $('#insertar').show();
     $('#logout').show();
     $('#show').show();
+     $('#showXML').show();
     $('#registro').hide();
     $('#login').hide();
 
@@ -36,6 +37,7 @@ echo "<script>window.onload = inicioSesion; </script>";
     <?php echo "<span><a href='Layout.php?email=" . $email . "'>Inicio</a></span>";
     echo "<span id='insertar' style='display:none'><a href='QuestionFormWithImage.php?email=" . $email . "'>Insertar Pregunta </a></span>";
     echo " <span id='show' style='display:none'><a href='ShowQuestionsWithImage.php?email=" . $email . "'>Ver Preguntas</a></span>";
+    echo " <span id='showXML' style='display:none'><a href='ShowXmlQuestions.php?email=" . $email . "'>Ver Preguntas XML</a></span>";
     echo "<span><a href='Credits.php?email=" . $email . "'>Creditos</a></span>"
     
     ?>

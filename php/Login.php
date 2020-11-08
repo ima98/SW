@@ -57,7 +57,7 @@
               window.location.href='Layout.php?email=$email';
               </script>";
         } else {
-          echo "Datos incorrectos, te jodes. <br>";
+          echo "Datos incorrectos. <br>";
         }
       }
 
