@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <assessmentItems>
 	<assessmentItem subject="Web" author="jvadillo001@ikasle.ehu.eus">
 		<itemBody>
-			<p>Tag HTML para a&#xF1;adir un formulario</p>
+			<p>Tag HTML para añadir un formulario</p>
 		</itemBody>
 		<correctResponse>
 			<response>
@@ -17,8 +17,8 @@
 	</assessmentItem>
 		<assessmentItem subject="Internet" author="rarruabarrena001@ikasle.ehu.eus">
 		<itemBody>
-			<p>Este protocolo acabar&#xE1; funcionando
-			incluso entre dos latas unidas por un cord&#xF3;n</p>
+			<p>Este protocolo acabará funcionando
+			incluso entre dos latas unidas por un cordón</p>
 		</itemBody>
 		<correctResponse>
 			<response>
@@ -31,4 +31,4 @@
 			<response> Ninguna es correcta </response>
 		</incorrectResponses>
 	</assessmentItem>
-</assessmentItems>
+<assessmentItem subject="aaaaaaaaa" author="vadilo@ehu.eus"><itemBody><p>aaaaaaaaaaaaaaaaaaaa</p></itemBody><correctResponse><response>Q</response></correctResponse><incorrectResponses><response>Q</response><response>Q</response><response>Q</response></incorrectResponses></assessmentItem></assessmentItems>

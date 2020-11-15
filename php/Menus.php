@@ -1,7 +1,6 @@
 <?php
 
-if (isset($_GET['email']) && strval($_GET['email'])!="") {
-  //echo "<script> ();</script>";
+if (isset($_GET['email']) && strval($_GET['email']) != "") {
   $email = strval($_GET['email']);
   echo "<script type='text/javascript'>
   function inicioSesion() {
@@ -14,11 +13,11 @@ if (isset($_GET['email']) && strval($_GET['email'])!="") {
     $('#login').hide();
 
     $('#h1').append('<p>$email </p>');
-    $('#h1').append('<img width=\'50\' height=\'60\' src=\'data:image/*;base64,".getImagenDeBD($email)."\' alt=\'Imagen\'/>');
+    $('#h1').append('<img width=\'50\' height=\'60\' src=\'data:image/*;base64," . getImagenDeBD($email) . "\' alt=\'Imagen\'/>');
   }
   
 </script>";
-echo "<script>window.onload = inicioSesion; </script>";
+  echo "<script>window.onload = inicioSesion; </script>";
 } else {
   $email = "";
 }
@@ -39,50 +38,24 @@ echo "<script>window.onload = inicioSesion; </script>";
     echo " <span id='show' style='display:none'><a href='ShowQuestionsWithImage.php?email=" . $email . "'>Ver Preguntas</a></span>";
     echo " <span id='showXML' style='display:none'><a href='ShowXmlQuestions.php?email=" . $email . "'>Ver Preguntas XML</a></span>";
     echo "<span><a href='Credits.php?email=" . $email . "'>Creditos</a></span>"
-    
+
     ?>
 
 
-    
+
   </nav>
 
   <script src='../js/jquery-3.4.1.min.js'></script>
-  <!-- <script type='text/javascript'>
-    function inicioSesion() {
-
-      $('#insertar').show();
-      $('#logout').show();
-      $('#show').show();
-      $('#registro').hide();
-      $('#login').hide();
-
-      $('#h1').append('<p><?php echo $email;  ?></p>');
- <?php //getImagenDeBD()?>
- //da un error
-    } -->
-    
-  </script>
-
+  <!-- <?php //echo $email;  ?></p>'); -->
   <?php
 
   function getImagenDeBD($email)
   {
-    //echo "getimagenDB funciona";
     include 'DbConfig.php';
     $mysqli = mysqli_connect($server, $user, $pass, $basededatos);
-    // if(!$mysqli){
-    //     die("Error: ".mysqli_connect_error);
-    // }
-
-    //$email = strval($_GET['email']);
-
     $sql = "SELECT foto FROM usuarios WHERE email=\"" . $email . "\";";
     $resul = mysqli_query($mysqli, $sql, MYSQLI_USE_RESULT);
-    // if(!$resul){
-    //     die("Error: ".mysqli_error($mysqli));
-    // }
     $img = mysqli_fetch_array($resul);
     return $img['foto'];
   }
-
   ?>

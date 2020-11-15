@@ -60,7 +60,6 @@ if (isset($_POST['enviar'])) {
 
 		$link = mysqli_connect($server, $user, $pass, $basededatos);
 
-
 		if ($_FILES['imgInp']['name'] == "") {
 			$image = "../images/índice.jpg";
 		} else {
