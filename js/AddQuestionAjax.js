@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
   $('#submit').click(function (event) {
     var email = $("#correo").val();
     var url = "AddQuestionWithImage.php?email="+email;
@@ -18,12 +17,14 @@ $(document).ready(function () {
       dataType: "html",
 
 
-      success:function{
-        $('#resultado').load("../php/Ajaxtable.php");
+      success:function(){
+        $('#resultado').load("../php/AjaxtableXml.php");
       },
       error:function(){
-        $('#resultado').html('<p class="error"><strong>El servidor parece que no responde</p>');
+        $('#resultado').html('<p class="error"><strong>El servidor no responde :(</p>');
       }
-    })
+    });
   }
+  );
 }
+);

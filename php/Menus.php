@@ -11,6 +11,7 @@ if (isset($_GET['email']) && strval($_GET['email']) != "") {
      $('#showXML').show();
     $('#registro').hide();
     $('#login').hide();
+    $('#ajax').show();
 
     $('#h1').append('<p>$email </p>');
     $('#h1').append('<img width=\'50\' height=\'60\' src=\'data:image/*;base64," . getImagenDeBD($email) . "\' alt=\'Imagen\'/>');
@@ -37,6 +38,7 @@ if (isset($_GET['email']) && strval($_GET['email']) != "") {
     echo "<span id='insertar' style='display:none'><a href='QuestionFormWithImage.php?email=" . $email . "'>Insertar Pregunta </a></span>";
     echo " <span id='show' style='display:none'><a href='ShowQuestionsWithImage.php?email=" . $email . "'>Ver Preguntas</a></span>";
     echo " <span id='showXML' style='display:none'><a href='ShowXmlQuestions.php?email=" . $email . "'>Ver Preguntas XML</a></span>";
+    echo " <span id='ajax' style='display:none'><a href='HandlingQuizesAjax.php?email=" . $email . "'>Insertar Preguntas Ajax XML</a></span>";
     echo "<span><a href='Credits.php?email=" . $email . "'>Creditos</a></span>"
 
     ?>
