@@ -7,6 +7,10 @@
 
 	<script src="../js/ShowImageInForm.js"></script>
 
+	<script src="../js/ShowQuestionsAjax.js"></script>
+
+	<script src="../js/AddQuestionAjax.js"></script>
+
 	<!-- <script src="../js/ValidateFieldsQuestion.js"></script> -->
 
 	<?php include '../html/Head.html' ?>
@@ -51,14 +55,14 @@
 
 			<input type="button" value="Enviar pregunta" id="submit" name="enviar"><br>
 
-			<input type="button" value="Ver preguntas" id="verp" name="verp"><br>
+			<input type="button" value="Ver preguntas" id="verp" name="verp" onclick="mostramemedioxmlaunquesea()"><br>
 
 		</div>
 
-
+		</form>
 
 		<div id="resultado"> </div>
-</form>
+
 	</section>
 	<?php 
 	include '../html/Footer.html' ;
@@ -68,7 +72,7 @@
 
 
 
-
+	}
 
 
 
