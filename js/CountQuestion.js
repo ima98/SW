@@ -1,14 +1,12 @@
 $(document).ready(setInterval(function () {
   var email = $("#correo").val();
   var url = "AjaxTableXmlCount.php?email=" + email;
-  //var formData = new FormData(fquestion);
-
+  
   $.ajax({
     type: 'post',
     enctype: 'multipart/form-data',
 
     url: url,
-    //data: formData, 
     processData: false,
     contentType: false,
     cache : false,
