@@ -60,7 +60,7 @@
 
 				<input type='file' id="imgInp" name="imgInp" /><br> <img id="blah" src="" style="width: 100px; height: 100px;" alt="Your Image" /><br>
 
-				<input type="button" value="Enviar pregunta" id="submit" name="enviar">
+				<input type="button" value="Enviar pregunta" id="submit" name="enviar"onclick="mostramemedioxmlaunquesea()">
 
 				<input type="button" value="Ver preguntas" id="verp" name="verp" onclick="mostramemedioxmlaunquesea()">
 

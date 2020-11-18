@@ -18,7 +18,7 @@ $(document).ready(function () {
 
 
       success:function(){
-        $('#resultado').load("../php/AjaxtableXml.php");
+        mostramemedioxmlaunquesea();
       },
       error:function(){
         $('#resultado').html('<p class="error"><strong>El servidor no responde :(</p>');
