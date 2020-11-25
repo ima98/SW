@@ -8,6 +8,8 @@
 	<?php include 'DbConfig.php' ?>
 	<script src="../js/jquery-3.4.1.min.js"></script>
 	<script src="../js/ShowImageInForm.js"></script>
+	<script src="../js/ServicioWSL.js"></script>
+
 </head>
 
 <body>
@@ -22,7 +24,7 @@
 				<label for="Profesor">Profesor</label><br>
 
 				<label for="correo">Dirección de correo:</label>
-				<input type="text" id="correo" name="correo" placeholder="name123@ikasle.ehu.eus" maxlength="70"><br><br>
+				<input type="text" id="correo" name="correo" placeholder="name123@ikasle.ehu.eus" maxlength="70"><div id="mail" name="mail"></div><br><br>
 
 
 				<label for="nombre">Nombre y Apellidos:</label>
@@ -30,7 +32,7 @@
 
 
 				<label for="contraseña">Contraseña:</label>
-				<input type="password" id="contraseña" name="contraseña"><br><br>
+				<input type="password" id="contraseña" name="contraseña"><div id="cont" name="cont"></div><br><br>
 
 				<label for="repcontraseña">Repetir contraseña:</label>
 				<input type="password" id="repcontraseña" name="repcontraseña"><br><br>
@@ -39,7 +41,7 @@
 
 				<br><br>
 
-				<input type="submit" value="Resgistrarse" id="submit" name="enviar"><br>
+				<input type="submit" value="Resgistrarse" id="submit" name="enviar" disabled=true><br>
 			</form>
 		</div>
 	</section>
