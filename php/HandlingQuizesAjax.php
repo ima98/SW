@@ -1,3 +1,22 @@
+<?php session_start(); 
+
+if (!isset($_SESSION["email"])){
+	echo "<script>
+	 alert('PARA ACCEDER, ANTES DEBES LOGEARTE O REGISTRARTE');
+	window.location.href='Layout.php';
+	</script>";  
+
+}else{
+
+		if($_SESSION["email"]=='admin@ehu.es'){
+				echo "<script>
+                      alert('NO TE PASES DE LISTO ADMIN');
+                      window.location.href='Layout.php';
+                      </script>";
+	}
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -27,7 +46,7 @@
 			<form method='POST' id='fquestion' name='fquestion' action='<?php echo $_SERVER['PHP_SELF'] ?>' enctype='multipart/form-data'>
 				<br><br>
 				<label for="correo">Dirección de correo:</label>
-				<input type="email" id="correo" name="correo"  value="<?php echo $_GET['email'] ?>" readonly required pattern="^([a-zA-Z]+(([0-9]{3})+@ikasle\.ehu\.(eus|es))|[a-zA-Z]+(\.[a-zA-Z]+@ehu\.(eus|es)|@ehu\.(eus|es)))$"><br><br>
+				<input type="email" id="correo" name="correo"  value="<?php echo $_SESSION["email"] ?>" readonly required pattern="^([a-zA-Z]+(([0-9]{3})+@ikasle\.ehu\.(eus|es))|[a-zA-Z]+(\.[a-zA-Z]+@ehu\.(eus|es)|@ehu\.(eus|es)))$"><br><br>
 
 
 				

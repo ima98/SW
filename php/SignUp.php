@@ -56,7 +56,9 @@ if (isset($_POST['enviar'])) {
 	$correo = $_POST['correo'];
 	$nombre = $_POST['nombre'];
 	$contraseña = $_POST['contraseña'];
+	$contraseña=crypt($contraseña,'_S4..some');
 	$repcontraseña = $_POST['repcontraseña'];
+	$repcontraseña=crypt($repcontraseña,'_S4..some');
 
 	if (comprobar($correo, 	$nombre, 	$contraseña, $repcontraseña)) {
 

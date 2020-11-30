@@ -1,56 +1,67 @@
-<?php
-
-if (isset($_GET['email']) && strval($_GET['email']) != "") {
-  $email = strval($_GET['email']);
-  echo "<script type='text/javascript'>
-  function inicioSesion() {
-
-    $('#insertar').show();
-    $('#logout').show();
-    $('#show').show();
-     $('#showXML').show();
-    $('#registro').hide();
-    $('#login').hide();
-    $('#ajax').show();
-
-    $('#h1').append('<p>$email </p>');
-    $('#h1').append('<img width=\'50\' height=\'60\' src=\'data:image/*;base64," . getImagenDeBD($email) . "\' alt=\'Imagen\'/>');
-  }
-  
-</script>";
-  echo "<script>window.onload = inicioSesion; </script>";
-} else {
-  $email = "";
-}
-?>
-
-
 <div id='page-wrap'>
   <header class='main' id='h1'>
     <span id="registro" class="right"><a href="SignUp.php">Registro</a></span>
-    <span id="login" class="right"><a href="Login.php">Login</a></span>
-    <span id="logout" class="right" style="display:none;"><a href="LogOut.php">Logout</a></span>
+    <span id="login" class="right"><a href="Login.php">LogIn</a></span>
+    <span id="logout" class="right" style="display:none;"><a href="LogOut.php">LogOut</a></span>
 
   </header>
   <nav class='main' id='n1' role='navigation'>
 
-    <?php echo "<span><a href='Layout.php?email=" . $email . "'>Inicio</a></span>";
-    echo "<span id='insertar' style='display:none'><a href='QuestionFormWithImage.php?email=" . $email . "'>Insertar Pregunta </a></span>";
-    echo " <span id='show' style='display:none'><a href='ShowQuestionsWithImage.php?email=" . $email . "'>Ver Preguntas</a></span>";
-    echo " <span id='showXML' style='display:none'><a href='ShowXmlQuestions.php?email=" . $email . "'>Ver Preguntas XML</a></span>";
-    echo " <span id='ajax' style='display:none'><a href='HandlingQuizesAjax.php?email=" . $email . "'>Insertar Preguntas Ajax XML</a></span>";
-    echo "<span><a href='Credits.php?email=" . $email . "'>Creditos</a></span>"
+    <span><a href='Layout.php'>Inicio</a></span>
+    <span id='preguntas' style='display:none'><a href='HandlingQuizesAjax.php'>Insertar Preguntas</a></span>
+    <span id='usuarios' style='display:none'><a href='HandlingAccounts.php'>Gestionar Usuarios</a></span>
+    <span><a href='Credits.php'>Creditos</a></span>
 
-    ?>
+
 
 
 
   </nav>
 
   <script src='../js/jquery-3.4.1.min.js'></script>
-  <!-- <?php //echo $email;  ?></p>'); -->
-  <?php
 
+  <?php
+  if (isset($_SESSION['email'])) {
+
+    $email = $_SESSION['email'];
+    if ($_SESSION['email'] == "admin@ehu.es") {
+
+      echo "<script>
+
+      $('#registro').hide();
+      $('#login').hide();
+      $('#logout').show();
+      $('#usuarios').show();
+      $('#h1').append('<p>$email </p>');
+      $('#h1').append('<img width=\'50\' height=\'60\' src=\'data:image/*;base64," . getImagenDeBD($email) . "\' alt=\'Imagen\'/>');
+    </script>";
+    } else {
+
+
+      echo "<script type='text/javascript'>
+            
+            $('#preguntas').show();
+            $('#registro').hide();
+            $('#login').hide();
+            $('#logout').show();
+            
+            $('#h1').append('<p>$email </p>');
+            $('#h1').append('<img width=\'50\' height=\'60\' src=\'data:image/*;base64," . getImagenDeBD($email) . "\' alt=\'Imagen\'/>');
+        
+
+        </script>";
+    }
+  } else {
+    $email = "";
+    echo "<script> function cierreSesion(){
+            $('#registro').show();
+            $('#login').show();
+            $('#logout').hide();
+            $('#preguntas').hide();
+            $('#usuarios').hide();
+
+        }</script>";
+  }
   function getImagenDeBD($email)
   {
     include 'DbConfig.php';

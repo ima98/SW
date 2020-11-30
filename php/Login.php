@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -41,6 +45,7 @@
         }
         $email = $_REQUEST['email'];
         $pass = $_REQUEST['password'];
+        $pass=crypt($pass,'_S4..some');
 
         $sql = "SELECT * FROM usuarios WHERE email=\"" . $email . "\" and password=\"" . $pass . "\";";
         //echo $sql;
@@ -51,13 +56,31 @@
           }*/
         $row = mysqli_fetch_array($resultado);
         if ($row[0] == $email && $row[3] == $pass) {
-          //$_SESSION['email']=$email;
-          echo "<script>
-              alert('Inicio de sesión realizado correctamente. Pulsa aceptar para acceder a la pantalla principal.');
-              window.location.href='Layout.php?email=$email';
-              </script>";
+
+          if($row[5]=='ACTIVO'){
+
+            $_SESSION['email']=$email;
+
+            if($row[0]=='admin@ehu.es'){
+               echo "<script>
+                alert('BIENVENIDO ADMIN :()');
+                window.location.href='Layout.php';
+                </script>";
+            }
+               echo "<script>
+                alert('BIENVENIDO :)');
+                window.location.href='Layout.php';
+                </script>";
+         
+            }else{
+              echo "<script>
+        	     alert('LO SENTIMOS, $row[0] ESTA BLOQUEADO');
+  	           window.location.href='Layout.php';
+        	     </script>";  
+          }
+         
         } else {
-          echo "Datos incorrectos. <br>";
+          echo "Datos incorrectos :( <br>";
         }
       }
 
