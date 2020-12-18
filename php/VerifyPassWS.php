@@ -11,7 +11,7 @@ $server->wsdl->schemaTargetNamespace=$ns;
 //registramos la función que vamos a implementar
 $server->register('contrasenia',array('x'=>'xsd:string','y'=>'xsd:int'),array('z'=>'xsd:string'),$ns);
 //implementamos la función
-function contrasenia ($x, $y){
+function contrasenia ($x, $y){  
 
 
  if($y==1010){
@@ -43,4 +43,3 @@ function contrasenia ($x, $y){
 //llamamos al método service de la clase nusoap antes obtenemos los valores de los parámetros
 if ( !isset( $HTTP_RAW_POST_DATA ) ) $HTTP_RAW_POST_DATA =file_get_contents( 'php://input' );
 $server->service($HTTP_RAW_POST_DATA);
-?>
