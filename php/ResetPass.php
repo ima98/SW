@@ -34,6 +34,10 @@ session_start();
 
       <?php
 
+
+
+      if (isset($_POST['enviar'])) {
+
       include 'DbConfig.php';
 
         $mysqli = mysqli_connect($server, $user, $pass, $basededatos);
@@ -56,13 +60,17 @@ session_start();
           $_SESSION['emailTemp'] = $email;
           $_SESSION['codigo']=$codigo;
 
-            
+          $texto="enlace para cambiar la contraseña:'$email'  y el codigo: '$codigo'";
+
+          
+
+          mail($email, "cambio de contraseña", $texto);
 
           
         } else {
           echo "No existe ningún usuario con ese email<br>";
         }
-      
+      }
 
 
       ?>

@@ -16,7 +16,6 @@ $(document).ready(function () {
       timeout: 8000,
       dataType: "html",
 
-
       success: function () {
         mostramemedioxmlaunquesea();
       },
